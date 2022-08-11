@@ -6,5 +6,7 @@
   "jsxBracketSameLine": false,
   "printWidth": 120,
   "tabWidth": 2,
-  "useTabs": false
+  "useTabs": false,
+  "no-empty": false,
+  "endOfLine": "auto"
 }
