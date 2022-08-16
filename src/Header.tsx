@@ -81,6 +81,7 @@ export const Header = () => {
       <MuiMenu>
         <MuiMenuItem text="Users" link={'/users'} />
         <MuiMenuItem text="sliders" link={'/sliders'} />
+        <MuiMenuItem text="Новини" link={'/news'} />
       </MuiMenu>
     </MuiAppBar>
   )

@@ -5,6 +5,11 @@ import App from './App'
 import { Popup } from './components/Popup'
 import { useAuth } from './context/AuthProvider'
 import { Login } from './pages/Login/Login'
+import { NewsCreate } from './pages/News/Create'
+import { NewsDelete } from './pages/News/Delete'
+import { NewsEdit } from './pages/News/Edit'
+import { NewsImage } from './pages/News/Image'
+import { NewsIndex } from './pages/News/News'
 import { CreateSlider } from './pages/Slider/Create'
 import { DeleteSlider } from './pages/Slider/Delete'
 import { SliderEdit } from './pages/Slider/Edit'
@@ -30,6 +35,12 @@ export const ReactRouter = () => {
           <Route path="/sliders/:id/image" element={<SliderImage />} />
           <Route path="/sliders/:id/delete" element={<DeleteSlider />} />
           <Route path="/sliders/create" element={<CreateSlider />} />
+
+          <Route path="/news" element={<NewsIndex />} />
+          <Route path="/news/:id/edit" element={<NewsEdit />} />
+          <Route path="/news/create" element={<NewsCreate />} />
+          <Route path="/news/:id/image" element={<NewsImage />} />
+          <Route path="/news/:id/delete" element={<NewsDelete />} />
         </Route>
       </Routes>
       {state?.backgroundLocation && (
@@ -63,6 +74,40 @@ export const ReactRouter = () => {
             element={
               <Popup>
                 <CreateSlider />
+              </Popup>
+            }
+          />
+
+          <Route
+            path="/news/:id/edit"
+            element={
+              <Popup>
+                <NewsEdit />
+              </Popup>
+            }
+          />
+
+          <Route
+            path="/news/create"
+            element={
+              <Popup>
+                <NewsCreate />
+              </Popup>
+            }
+          />
+          <Route
+            path="/news/:id/image"
+            element={
+              <Popup>
+                <NewsImage />
+              </Popup>
+            }
+          />
+          <Route
+            path="/news/:id/delete"
+            element={
+              <Popup>
+                <NewsDelete />
               </Popup>
             }
           />
