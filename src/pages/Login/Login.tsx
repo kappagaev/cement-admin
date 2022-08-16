@@ -81,7 +81,7 @@ export const Login = () => {
                   </FormControl>
                   <FormControl sx={{ marginBottom: '1.5rem' }} fullWidth={true}>
                     <TextField
-                      id="my-input"
+                      id="email"
                       label="Пошта"
                       variant="outlined"
                       type="email"
@@ -90,7 +90,7 @@ export const Login = () => {
                   </FormControl>
                   <FormControl sx={{ marginBottom: '1.5rem' }} fullWidth={true}>
                     <TextField
-                      id="my-input"
+                      id="password"
                       variant="outlined"
                       label="Пароль"
                       type="password"
