@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { LoaderOverlay } from '../../components/comon/LoaderOverlay'
 import { TableImage } from '../../components/tables/TableImage'
 import { useNotification } from '../../context/NotificationProvider'
-import { deleteNews } from '../../services/news'
+import { deleteNews, getNews, News } from '../../services/news'
 import { destroySlider, getSlider, getSliders, Slider } from '../../services/slider'
 
 export const NewsDelete = () => {
@@ -13,8 +13,8 @@ export const NewsDelete = () => {
   if (!id) {
     return null
   }
-  const { data, isLoading } = useQuery<Slider>(['slider', id], async () => {
-    return await getSlider(id)
+  const { data, isLoading } = useQuery<News>(['news', id], async () => {
+    return await getNews(id)
   })
   const [isDeleting, setDeleting] = useState(false)
   const navigate = useNavigate()
@@ -37,7 +37,7 @@ export const NewsDelete = () => {
       <h1>Ви впенені що хочете видалити? </h1>
       <LoaderOverlay active={isLoading || isDeleting}>
         <p>
-          <TableImage src={'/' + data?.image_filepath} />
+          <TableImage src={data?.image_filepath} />
         </p>
         <p>
           <Button onClick={() => onClick(id)}>Видалити</Button>

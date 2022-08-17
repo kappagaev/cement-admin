@@ -24,7 +24,7 @@ export const SliderTable = ({ slides }: SliderProps) => {
           {slides?.map((slide: Slider) => (
             <TableRow key={slide._id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
               <TableCell align="center">
-                {slide.image_filepath ? <TableImage src={'/' + slide.image_filepath} alt={slide.title} /> : null}
+                {slide.image_filepath ? <TableImage src={slide.image_filepath} alt={slide.title} /> : null}
               </TableCell>
               <TableCell align="center">{slide.title}</TableCell>
               <TableCell align="center">{slide.subtitle}</TableCell>

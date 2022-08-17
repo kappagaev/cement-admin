@@ -19,7 +19,7 @@ export const ImageForm = ({ imageFilepath, onSubmit }: Props) => {
     <p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div style={{ marginBottom: '20px' }}>
-          <TableImage src={'/' + imageFilepath} />
+          <TableImage src={imageFilepath} />
         </div>
         <div style={{ marginBottom: '20px' }}>
           <input type="file" {...register('image')} />

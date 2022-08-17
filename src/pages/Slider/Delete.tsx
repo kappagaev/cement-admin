@@ -35,7 +35,7 @@ export const DeleteSlider = () => {
       <h1>Ви впенені що хочете видалити? </h1>
       <LoaderOverlay active={isLoading || isDeleting}>
         <p>
-          <TableImage src={'/' + data?.image_filepath} />
+          <TableImage src={ data?.image_filepath} />
         </p>
         <p>
           <Button onClick={() => deleteSlider(id)}>Видалити</Button>

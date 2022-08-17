@@ -24,9 +24,7 @@ export const NewsTable = ({ news }: Props) => {
           {news?.map((newsItem: News) => (
             <TableRow key={newsItem._id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
               <TableCell align="center">
-                {newsItem.image_filepath ? (
-                  <TableImage src={'/' + newsItem.image_filepath} alt={newsItem.title} />
-                ) : null}
+                {newsItem.image_filepath ? <TableImage src={newsItem.image_filepath} alt={newsItem.title} /> : null}
               </TableCell>
               <TableCell align="center">{newsItem.title}</TableCell>
               <TableCell align="center">{newsItem.description}</TableCell>

@@ -16,7 +16,7 @@ export const NewsForm = ({ news, onSubmit }: Props) => {
   } = useForm<News>()
   return (
     <Container sx={{ minWidth: '500px', paddingBottom: '40px' }}>
-      {news?.image_filepath ? <TableImage src={'/' + news?.image_filepath} /> : null}
+      {news?.image_filepath ? <TableImage src={news?.image_filepath} /> : null}
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <div style={{ marginTop: '20px' }}>

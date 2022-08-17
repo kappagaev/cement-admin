@@ -16,7 +16,7 @@ export const SliderForm = ({ slider, onSubmit }: Props) => {
   } = useForm<Slider>()
   return (
     <p>
-      {slider?.image_filepath ? <TableImage src={'/' + slider?.image_filepath} /> : null}
+      {slider?.image_filepath ? <TableImage src={slider?.image_filepath} /> : null}
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <div style={{ marginTop: '20px' }}>
