@@ -43,10 +43,16 @@ export const AuthProvider = ({ children }: Props) => {
     data,
     isLogged,
     setTokens: (tokens: Tokens) => {
+      let decodedData: Tokens
+      try {
+        decodedData = jwt_decode(tokens.accessToken)
+      } catch (error) {
+        return
+      }
       localStorage.setItem('accessToken', tokens.accessToken)
       localStorage.setItem('refreshToken', tokens.refreshToken)
       // decodes jwt token and sets the data property of the auth context
-      setData(jwt_decode(tokens.accessToken))
+      setData(decodedData)
       setTokens(tokens)
       setIsLogged(true)
     },

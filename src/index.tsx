@@ -4,6 +4,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { AuthProvider } from './context/AuthProvider'
+import { AxiosProvider } from './context/AxiosProvider'
 import { NotificationProvider } from './context/NotificationProvider'
 import reportWebVitals from './reportWebVitals'
 import { ReactRouter } from './routes'
@@ -17,9 +18,11 @@ root.render(
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <AuthProvider>
-          <NotificationProvider>
-            <ReactRouter />
-          </NotificationProvider>
+          <AxiosProvider>
+            <NotificationProvider>
+              <ReactRouter />
+            </NotificationProvider>
+          </AxiosProvider>
         </AuthProvider>
       </ThemeProvider>
     </QueryClientProvider>
