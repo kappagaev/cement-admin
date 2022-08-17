@@ -41,7 +41,6 @@ export const Login = () => {
     setIsLoading(true)
     const tokens = await singIn(email, password)
     setIsLoading(false)
-    console.log(tokens)
     if (!tokens) {
       addNotification({
         type: 'error',
